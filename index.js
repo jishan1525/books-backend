@@ -5,7 +5,9 @@ const app = express();
 const Book = require("./models/books.models");
 intializeDatabase();
 app.use(express.json())
+const cors = require("cors");
 
+app.use(cors());
 async function addBook(bookData){
     try {
         const newBook = new Book(bookData)
